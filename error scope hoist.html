@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>errors,scope and hoist </title>
+</head>
+<body>
+	<h2>JavaScript Error Handling</h2>
+
+<p>How to use <b>catch</b> to display an error.</p>
+
+<p id="no1"></p>
+
+<script>
+try {
+  adddlert("Welcome guest!");
+}
+catch(err) {
+  document.getElementById("no1").innerHTML = err.message;
+}
+</script>
+
+
+<!--input throw-->
+
+	<h2>JavaScript try catch</h2>
+
+<p>Please input a number between 5 and 10:</p>
+
+<input id="no2" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="p01"></p>
+
+<script>
+function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+  let x = document.getElementById("no2").value;
+  try { 
+    if(x == "")  throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 5)  throw "too low";
+    if(x > 10)   throw "too high";
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+</script>
+
+<!--uri error-->
+<p>Some characters cannot be decoded with decodeURI():</p>
+
+<p id="no3"></p>
+
+<script>
+try {
+  decodeURI("%%%");
+}
+catch(err) {
+  document.getElementById("no3").innerHTML = err.name;
+}
+</script>
+
+<!--type error-->
+<p id="no4"></p>
+
+<script>
+let num = 1;
+try {
+  num.toUpperCase();
+}
+catch(err) {
+  document.getElementById("no4").innerHTML = err.name;
+}
+</script>
+
+<!--syntax error-->
+<p id="no5"></p>
+
+<script>
+try {
+  eval("alert('Hello)");
+}
+catch(err) {
+  document.getElementById("no5").innerHTML = err.name;
+}
+</script>
+
+<!--- scope-->
+
+
+
+
+
+<p id="demo1"></p>
+
+<p id="demo2"></p>
+
+<script>
+myFunction();
+
+function myFunction() {
+  let carName = "Volvo";
+  document.getElementById("demo1").innerHTML = typeof carName + " " + carName;
+}
+
+document.getElementById("demo2").innerHTML = typeof carName;
+</script>
+
+<!--global variable-->
+
+<p>A GLOBAL variable can be accessed from any script or function.</p>
+
+<p id="demo2"></p>
+
+<script>
+let carName = "Volvo";
+myFunction();
+
+function myFunction() {
+  document.getElementById("demo2").innerHTML = "I can display " + carName;
+}
+</script>
+
+<!----Hoist--->
+
+
+
+
+
+<p id="demo3"></p>
+
+<script>
+x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo3"); // Find an element 
+elem.innerHTML = x;           // Display x in the element
+
+var x; // Declare x
+</script>
+<!--initialization--->
+<p id="demo4"></p>
+
+<script>
+var x = 5; // Initialize x
+var y = 7; // Initialize y
+
+elem = document.getElementById("demo4"); // Find an element 
+elem.innerHTML = x + " " + y;       // Display x and y
+
+</script>
+
+<!--initialization are not hoisted-->
+<p id="demo5"></p>
+<script>
+var p = 5;  // Initialize p
+
+elem = document.getElementById("demo5");      // Find an element 
+elem.innerHTML = "p is " + x + " and q is " + y;  // Display p and q
+
+var q = 7;  // Initialize q
+</script>
+</body>
+</html>

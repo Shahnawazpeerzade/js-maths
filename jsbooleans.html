@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Js Booleans And Js Iterables and Js sets</title>
+	
+</head>
+<body>
+	<!-- Booleans function-->
+	<h1>Booleans Function</h1>
+
+	<p>The number greater or lesses then 10>9:</p>
+		<h2 id="no1"></h2>
+	<script type="text/javascript">
+		document.getElementById("no1").innerHTML = Boolean(10 > 9);
+	</script>
+
+	<!-- Booleans value-->
+	<h1>Booleans value</h1>
+
+<h2 id="no2"></h2>
+	<script type="text/javascript">
+		
+	let x = 10 / "Hello";
+document.getElementById("no2").innerHTML = Boolean(x);
+</script>  
+
+
+<!-- Booleans as object-->
+	<h1>Booleans as object</h1>
+
+	<h2 id="no3"></h2>
+	<script>
+let a = false;         // x is a Boolean
+let b = new Boolean(true);  // y is an object
+document.getElementById("no3").innerHTML = (a===b);
+</script>
+
+
+	<h2 id="no4"></h2>
+	<script>
+		// x is a Boolean
+let p = false;   
+
+// y is an object      
+let q = new Boolean(true);  
+document.getElementById("no4").innerHTML = typeof p + "<br>" +typeof q;
+</script>
+
+
+<!---Iterables -->
+
+<h1>Js Iterables</h1>
+<p>Iterable over string</p>
+<h2 id="no5"></h2>
+<script type="text/javascript">
+	// creat a string
+	const name = "Shahnawaz";
+
+	// List all Letters
+	let text =""
+	for (const x of name){
+		text += x + "<br>";
+
+	}
+	document.getElementById("no5").innerHTML= text;
+</script>
+
+<!--iteables as a set-->
+<h1>Iterables as a set</h1>
+<h2 id="no6"></h2>
+<script type="text/javascript">
+
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// List all Elements
+let text1 = "";
+for (const x of letters) {
+  text += x + "<br>";
+}
+
+document.getElementById("no6").innerHTML = text1;
+	</script>
+
+
+
+<!--iteables as a map-->
+
+
+<h1>Iterables as a map</h1>
+<h2 id="no7"></h2>
+	<script>
+// Create a Map
+const fruits = new Map([
+  ["Shahnawaz", 313],
+  ["Shahid", 12],
+  ["Irfan", 20]
+]);
+
+// List all entries
+let txt = "";
+for (const x of fruits) {
+  text += x + "<br>";
+}
+
+document.getElementById("no7").innerHTML = txt;
+</script>
+
+
+
+<!-- Sets-->
+<h1>Sets </h1>
+<h2 id="no8"></h2>
+
+<script>
+// Create a Set
+const letters1 = new Set();
+
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+
+// Display set.size
+document.getElementById("no8").innerHTML = letters.size;
+</script>
+
+
+<h1>Sets </h1>
+<h2 id="no9"></h2>
+
+<script>
+// Create a Set
+const letters2 = new Set();
+
+// variables
+const s = "a";
+const e = "b";
+const d = "c";
+
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+
+// Display set.size
+document.getElementById("no9").innerHTML = letters.size;
+</script>
+
+<h1>Sets </h1>
+<h2 id="no10"></h2>
+
+<script>
+// Create a Set
+const letters3 = new Set();
+
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("d");
+letters.add("d");
+letters.add("e");
+
+
+
+// Display set.size
+document.getElementById("no10").innerHTML = letters.size;
+</script>
+
+
+</body>
+</html>

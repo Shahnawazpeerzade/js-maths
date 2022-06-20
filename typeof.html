@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Typeof</title>
+</head>
+<body>
+<p id="no1"></p>
+
+<script>
+document.getElementById("no1").innerHTML = 
+  typeof "john" + "<br>" +
+  typeof 3.14 + "<br>" +
+  typeof NaN + "<br>" +
+  typeof false + "<br>" +
+  typeof [1,2,3,4] + "<br>" +
+  typeof {name:'john', age:34} + "<br>" +
+  typeof new Date() + "<br>" +
+  typeof function () {} + "<br>" +
+  typeof myCar + "<br>" +
+  typeof null;
+</script>
+
+<!--array function in js-->
+
+<h2>JavaScript Array Object</h2>
+<p>This "home made" isArray() function returns true when used on an array:</p>
+
+<p id="no2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("no2").innerHTML = isArray(fruits);
+
+function isArray(myArray) {
+  return myArray.constructor === Array;
+}
+</script>
+<!--date function-->
+<p>This "home made" isDate() function returns true when used on an date:</p>
+
+<p id="no3"></p>
+
+<script>
+const myDate = new Date();
+document.getElementById("no3").innerHTML = isDate(myDate);
+
+function isDate(myDate) {
+  return myDate.constructor === Date;
+}
+</script>
+
+<!--type conversion-->
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable or expression:</p>
+
+<p id="no4"></p>
+
+<script>
+let y = "Sania";
+let x = + y;
+document.getElementById("no4").innerHTML = typeof y + "<br>" + typeof x;
+</script>
+<!--converts number to string-->
+
+<p id="no5"></p>
+
+<script>
+let p = 123;
+document.getElementById("no5").innerHTML =
+  String(p) + "<br>" +
+  String(123) + "<br>" +
+  String(100 + 23);
+</script>
+
+<!--type converions Js-->
+
+<h2>JavaScript Type Conversions</h2>
+
+<p>Converting the number 0 to other types:</p>
+
+<p id="no6" style="font-family:courier"></p>
+
+<script>
+let a = 0;
+document.getElementById("no6").innerHTML =
+"Number : " + Number(a) + "<br>" +
+"String : " + String(a) + "<br>" +
+"Boolean: " + Boolean(a);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Js map objects</title>
+</head>
+<body>
+<p id="no1"></p>
+
+<script>
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+document.getElementById("no1").innerHTML = fruits.get("bananas");
+</script>
+
+<!--map set-->
+<p id="no2"></p>
+
+<script>
+// Create a Map
+const fruit = new Map();
+
+// Set Map Values
+fruit.set("plums", 500);
+fruit.set("grapes", 300);
+fruit.set("pomegranates", 200);
+
+document.getElementById("no2").innerHTML = fruit.get("plums");
+</script>
+
+
+<!--get method-->
+<p id="no3"></p>
+<script>
+// Create a Map
+const person = new Map([
+  ["shanu", 800],
+  ["Asif", 300],
+  ["yaseen", 400]
+]);
+
+document.getElementById("no3").innerHTML = person.get("shanu");
+</script>
+
+<!--size property-->
+<p id="no4"></p>
+
+<script>
+// Create a Map
+const persons = new Map([
+  ["Nawaz", 500],
+  ["Irfan", 300],
+  ["Shahid", 200]
+]);
+// Delete an Element
+persons.delete("Shahid");
+
+document.getElementById("no4").innerHTML = persons.size;
+</script>
